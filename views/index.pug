@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 Welcome to My Portfolio
+  p Explore my projects and skill set below.
+
+  section
+    h2 Projects
+    if projects.length > 0
+      ul.project-list
+        each project in projects
+          li
+            h3= project.title
+            p= project.description
+    else
+      p No projects added yet.
+
+  section
+    h2 Skills
+    if skills.length > 0
+      ul.skill-list
+        each skill in skills
+          li= skill.name
+    else
+      p No skills added yet.
