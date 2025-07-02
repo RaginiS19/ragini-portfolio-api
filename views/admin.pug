@@ -3,6 +3,59 @@ extends layout
 block content
   h1 Admin Dashboard
 
-  include partials/admin-projects
-  hr
-  include partials/admin-skills
+  // Add Project
+
+  h2 Add Project
+  form(method="POST", action="/admin/projects/add")
+    input(type="text", name="title", placeholder="Title", required)
+    input(type="text", name="description", placeholder="Description", required)
+    button(type="submit") Add Project
+
+  h2 Projects
+  if projects.length
+    ul
+      each project in projects
+        li
+          b= project.title
+          |  - #{project.description}
+
+          // Update Project
+          form(method="POST", action=`/admin/projects/update/${project._id}`)
+            input(type="text", name="title", value=project.title, required)
+            input(type="text", name="description", value=project.description, required)
+            button(type="submit") Update
+
+          // Delete Project
+          form(method="POST", action=`/admin/projects/delete/${project._id}`)
+            button(type="submit") Delete
+  else
+    p No projects added yet.
+
+  // Add Skill
+  h2 Add Skill
+  form(method="POST", action="/admin/skills/add")
+    input(type="text", name="name", placeholder="Skill Name", required)
+    input(type="text", name="level", placeholder="Level", required)
+    input(type="text", name="category", placeholder="Category", required)
+    button(type="submit") Add Skill
+
+  h2 Skills
+  if skills.length
+    ul
+      each skill in skills
+        li
+          b= skill.name
+          |  - #{skill.level} (#{skill.category})
+
+          // Update Skill
+          form(method="POST", action=`/admin/skills/update/${skill._id}`)
+            input(type="text", name="name", value=skill.name, required)
+            input(type="text", name="level", value=skill.level, required)
+            input(type="text", name="category", value=skill.category, required)
+            button(type="submit") Update
+
+          // Delete Skill
+          form(method="POST", action=`/admin/skills/delete/${skill._id}`)
+            button(type="submit") Delete
+  else
+    p No skills added yet.

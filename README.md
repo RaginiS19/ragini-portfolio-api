@@ -1,28 +1,29 @@
-# Ragini Shirwalkar Portfolio API
+# 💼 Ragini Shirwalkar Portfolio API
 
-This is a Node.js + Express portfolio web app that features an admin dashboard to manage projects and skills, and exposes a JSON API to serve data for future use (e.g. a public portfolio frontend).
+A full-stack Node.js + Express app featuring an admin dashboard for managing **Projects** and **Skills**, along with public-facing JSON API endpoints. Built using MongoDB Atlas and Pug templates.
 
 ---
 
 ## 🌟 Features
 
-- Admin dashboard built with Pug to:
-  - Add/Delete **Projects**
-  - Add/Delete **Skills**
-- JSON API endpoints for both collections
-- Connected to MongoDB Atlas
-- Responsive, customized CSS (no obvious framework)
-- Environment variable support via `.env`
+- 🔐 Admin dashboard (`/admin`) to:
+  - ✅ Add, update, and delete **Projects**
+  - ✅ Add, update, and delete **Skills**
+- 🧾 JSON API for public data
+- 🌍 MongoDB Atlas integration
+- 🎨 Responsive, custom-styled UI (no obvious framework)
+- 📁 Modular structure for easy maintenance
+- ✅ Environment configuration via `.env`
 
 ---
 
 ## 🧠 Tech Stack
 
-- Node.js
-- Express
-- MongoDB Atlas (via Mongoose)
-- Pug Template Engine
-- CSS (custom)
+- **Node.js** + **Express**
+- **MongoDB Atlas** via **Mongoose**
+- **Pug** (server-side templates)
+- **CSS** (custom)
+- **dotenv**, **nodemon**
 
 ---
 
@@ -35,56 +36,55 @@ This is a Node.js + Express portfolio web app that features an admin dashboard t
 
 ---
 
-## 🔧 How to Run Locally
+## 🔧 Running Locally
 
-1. Clone the repo  
-   `git clone <your-github-url>`
-
-2. Install dependencies  
-   `npm install`
-
-3. Create a `.env` file in the root folder with:
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/RaginiS19/ragini-portfolio-api.git
+   cd ragini-portfolio-api
 
 
-4. Run the app  
-`npm run dev` (for nodemon) or `npm start`
+2. **Install dependencies
+     npm install
 
-5. Open in browser  
-`http://localhost:3000`
+3. **Create .env in the root
+     MONGODB_URI=your-mongodb-uri
 
----
+4. **Run the app
+     npm run dev     # for development with nodemon
+     npm start       # for production
 
-## 🌐 Live Demo
+5.  **Open in browser
+    http://localhost:3000
 
-**Deployed link:**  
-[https://your-deployment-url.com](https://your-deployment-url.com)
 
----
+🌐 Live Demo
 
-## 🔒 Security
+🟢 Deployed URL:
+👉 https://your-deployment-url.com
+(Replace this with your Render or Vercel link once deployment is successful.)
 
-The `.env` file is ignored in GitHub for security purposes. Please include it manually if running locally.
-
----
-
-## 📁 Folder Structure
+🗂 Folder Structure
 
 ├── models/
-│ ├── project.js
-│ └── skill.js
+│   ├── project.js
+│   └── skill.js
 ├── routes/
-│ ├── admin.js
-│ ├── api.js
-│ └── index.js
+│   ├── admin.js
+│   ├── api.js
+│   └── index.js
 ├── views/
-│ ├── layout.pug
-│ ├── index.pug
-│ └── partials/
-│ ├── admin-projects.pug
-│ └── admin-skills.pug
+│   ├── layout.pug
+│   ├── index.pug
+│   └── admin.pug
 ├── public/
-│ └── styles.css
-├── .env
+│   ├── styles.css
+│   └── script.js
+├── .env.example
 ├── index.js
-└── package.json
+├── package.json
+└── README.md
 
+
+
+ 

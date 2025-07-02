@@ -3,21 +3,14 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Ragini Shirwalkar Portfolio
+    title Portfolio Admin
     link(rel="stylesheet", href="/styles.css")
   body
     header
       nav.navbar
         .container
-          a.logo(href="/") Ragini Shirwalkar
-          ul.nav-links
-            li: a(href="/") Home
-            li: a(href="/admin") Admin
-
+          a.logo(href="/") My Portfolio Admin
     main
-      .container
-        block content
-
+      block content
     footer
-      .container
-        p &copy; 2025 Ragini Shirwalkar. All rights reserved.
+      p © #{new Date().getFullYear()} Ragini Shirwalkar

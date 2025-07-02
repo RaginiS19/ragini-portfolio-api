@@ -1,20 +1,32 @@
+
+// Add Skill Form
+
 h2 Add Skill
 form(action="/admin/skills/add" method="POST")
   input(type="text" name="name" placeholder="Skill Name" required)
-  select(name="level")
-    option(value="Beginner") Beginner
-    option(value="Intermediate") Intermediate
-    option(value="Advanced") Advanced
-  input(type="text" name="category" placeholder="Category")
+  input(type="text" name="level" placeholder="Skill Level (e.g., Beginner, Advanced)" required)
+  input(type="text" name="category" placeholder="Category (e.g., Frontend, Tools)" required)
   button(type="submit") Add Skill
+
+// Skills List
 
 h2 Skills List
 if skills.length
   each skill in skills
-    div.skill-box
+    .skill-box
       h3= skill.name
-      p #{skill.level} - #{skill.category}
+      p Level: #{skill.level}
+      p Category: #{skill.category}
+
+      // Update Skill
+      form(action=`/admin/skills/update/${skill._id}` method="POST")
+        input(type="text" name="name" value=skill.name required)
+        input(type="text" name="level" value=skill.level required)
+        input(type="text" name="category" value=skill.category required)
+        button(type="submit") Update
+
+      // Delete Skill
       form(action=`/admin/skills/delete/${skill._id}` method="POST")
         button(type="submit") Delete
 else
-  p No skills yet.
+  p No skills yet. Add one using the form above.
