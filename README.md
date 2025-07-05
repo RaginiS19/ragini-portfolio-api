@@ -62,7 +62,13 @@ A full-stack Node.js + Express app featuring an admin dashboard for managing **P
 
 🟢 Deployed URL:
 👉 https://your-deployment-url.com
-(Replace this with your Render or Vercel link once deployment is successful.)
+# 💼 Ragini Shirwalkar Portfolio API
+
+https://ragini-portfolio-api.onrender.com → public homepage
+https://ragini-portfolio-api.onrender.com/admin → admin dashboard
+https://ragini-portfolio-api.onrender.com/api/projects → API
+https://ragini-portfolio-api.onrender.com/api/skills
+
 
 🗂 Folder Structure
 
